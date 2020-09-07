@@ -3,3 +3,4 @@ __pycache__/
 .mypy**
 .vscode/*
 ./idea
+2.2
