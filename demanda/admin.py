@@ -14,3 +14,5 @@ class EnderecoAdmin(admin.ModelAdmin):
 
 
 admin.site.register(User)
+
+

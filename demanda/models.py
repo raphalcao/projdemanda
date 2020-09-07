@@ -77,3 +77,4 @@ class Demanda(models.Model):
 
     def __str__(self):
         self.format = "{} ".format(self.descricao)
+
