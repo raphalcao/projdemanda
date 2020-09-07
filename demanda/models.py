@@ -23,7 +23,6 @@ class GerenciamentoUsuario(BaseUserManager):
 
     def create_superuser(self, email, password):
         user = self.create(email, password, validaAdmin=True, validaAnunciante=True)
-
         return user
 
 # Create your models here.
@@ -75,6 +74,5 @@ class Demanda(models.Model):
     anunciante = models.ForeignKey(User, on_delete=models.CASCADE, null=False, blank=False)
     finalizado = models.BooleanField(default=False)
 
-    def __str__(self):
-        self.format = "{} ".format(self.descricao)
+
 
