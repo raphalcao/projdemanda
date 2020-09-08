@@ -1,36 +1,34 @@
-from rest_framework.views import APIView
-from rest_framework.response import Response
-
+from rest_framework import generics
 from .models import User, Endereco, Demanda
 from .serializers import UserSerializer, EnderecoSerializer, DemandaSerializer
 
 
-class DemandaAPIView(APIView):
-    """
-    Api de Demanda
-    """
-
-    def get(self, request):
-        demandas = Demanda.objects.all()
-        serializer = DemandaSerializer(demandas, many=True)
-        return Response(serializer.data)
+class DemandasAPIView(generics.ListCreateAPIView):
+    queryset = Demanda.objects.all()
+    serializer_class = DemandaSerializer
 
 
-class EnderecoAPIView(APIView):
-    """
-    Api de Endereço
-    """
-    def get(self, request):
-        enderecos = Endereco.objects.all()
-        serializer = EnderecoSerializer(enderecos, many=True)
-        return Response(serializer.data)
+class DemandaAPIView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Demanda.objects.all()
+    serializer_class = DemandaSerializer
 
 
-class UserAPIView(APIView):
-    """
-    Api de Usuarios
-    """
-    def get(self, request):
-        usuarios = User.objects.all()
-        serializer = UserSerializer(usuarios, many=True)
-        return Response(serializer.data)
+class EnderecosAPIView(generics.ListCreateAPIView):
+    queryset = Endereco.objects.all()
+    serializer_class = EnderecoSerializer
+
+
+class EnderecoAPIView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Endereco.objects.all()
+    serializer_class = EnderecoSerializer
+
+
+class UsersAPIView(generics.ListCreateAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+
+
+class UserAPIView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+

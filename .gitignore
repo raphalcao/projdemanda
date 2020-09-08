@@ -2,5 +2,5 @@ venv/
 __pycache__/
 .mypy**
 .vscode/*
-./idea
+.idea/
 2.2
