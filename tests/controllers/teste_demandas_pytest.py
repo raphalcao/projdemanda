@@ -12,7 +12,7 @@ class TestDemandas:
 
 
     def test_get_demanda(self):
-        demanda = requests.get(url=f'{self.url_base_demandas}1/', headers=self.headers)
+        demanda = requests.get(url=f'{self.url_base_demandas}3/', headers=self.headers)
         assert demanda.status_code == 200
 
 
@@ -33,10 +33,10 @@ class TestDemandas:
             "anunciante": 2
 
         }
-        resposta = requests.put(url=f'{self.url_base_demandas}1/', headers=self.headers, data=atualizado)
+        resposta = requests.put(url=f'{self.url_base_demandas}3/', headers=self.headers, data=atualizado)
         assert resposta.status_code == 200
 
 
     def test_delete_demanda(self):
-        resposta = requests.delete(url=f'{self.url_base_demandas}1/', headers=self.headers)
+        resposta = requests.delete(url=f'{self.url_base_demandas}3/', headers=self.headers)
         assert resposta.status_code == 204
