@@ -1,0 +1,7 @@
+{
+  "teste_demandas_pytest.py::TestDemandas::test_delete_demanda": true,
+  "teste_demandas_pytest.py::TestDemandas::test_get_demanda": true,
+  "teste_demandas_pytest.py::TestDemandas::test_put_curso": true,
+  "teste_users_pytest.py::TestDemandas::test_post_user": true,
+  "teste_users_pytest.py::TestUsers::test_delete_user": true
+}

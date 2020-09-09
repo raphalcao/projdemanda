@@ -40,3 +40,4 @@ class TestDemandas:
     def test_delete_demanda(self):
         resposta = requests.delete(url=f'{self.url_base_demandas}3/', headers=self.headers)
         assert resposta.status_code == 204
+
