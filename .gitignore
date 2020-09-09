@@ -4,3 +4,5 @@ __pycache__/
 .vscode/*
 .idea/
 2.2
+_db.sqlite
+db.sqlite

@@ -5,7 +5,7 @@ from django.contrib.auth.models import (
 
 
 class GerenciamentoUsuario(BaseUserManager):
-    def create(self, email, password, validaAdmin=False, validaAnunciante=False):
+    def create(self, email, password, is_admin=False, is_staff=False):
         if not email:
             raise ValueError("É necessário possuir um email.")
 
@@ -14,18 +14,16 @@ class GerenciamentoUsuario(BaseUserManager):
 
         user = self.model(email=self.normalize_email(email))
 
-        user.admin = validaAdmin
-        user.anunciante = validaAnunciante
+        user.admin = is_admin
+        user.staff = is_staff
         user.set_password(password)
         user.save(using=self._db)
 
         return user
 
     def create_superuser(self, email, password):
-        user = self.create(email, password, validaAdmin=True, validaAnunciante=True)
+        user = self.create(email, password, is_admin=True, is_staff=True)
         return user
-
-# Create your models here.
 
 
 class User(AbstractBaseUser):
@@ -44,11 +42,11 @@ class User(AbstractBaseUser):
         return True
 
     @property
-    def anunciante(self):
+    def is_staff(self):
         return self.anunciante
 
     @property
-    def admin(self):
+    def is_admin(self):
         return self.admin
 
     USERNAME_FIELD = 'email'

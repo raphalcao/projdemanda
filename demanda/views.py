@@ -2,8 +2,17 @@ from rest_framework import generics
 from .models import User, Endereco, Demanda
 from .serializers import UserSerializer, EnderecoSerializer, DemandaSerializer
 
+"""
+from.permissions import ValidaSuperUser
+
+"""
 
 class DemandasAPIView(generics.ListCreateAPIView):
+    """
+    permission_classes = (
+        ValidaSuperUser,
+    )
+    """
     queryset = Demanda.objects.all()
     serializer_class = DemandaSerializer
 
