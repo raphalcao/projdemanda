@@ -1,8 +1,10 @@
 USO DO DOCKER
 
 Para fazer uma imagem a partir dos dados: docker-compose build
+
 Para efetuar um clone, abra a plataforma do docker e digite o comando: docker push raphalcao/projdemanda:tagname, onde
 tagname é de sua escolha.
+
 
 Para executar essa API, deve executar os seguintes comandos:
 
